@@ -19,7 +19,7 @@ const current0 = document.getElementById('current--0');
 const current1 = document.getElementById('current--1');
 
 // Starting conditions
-const WINNING_SCORE = 10; // Set winning score as a constant for easy customization
+const WINNING_SCORE = 100; // Set winning score as a constant for easy customization
 let playing, currentScore, activePlayer, scores;
 
 function initGame() {
