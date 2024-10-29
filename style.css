@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: #f5f5f5;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* LAYOUT */
+
+main {
+    position: relative;
+    width: 100rem;
+    height: 60rem;
+    background-color: rgba(50, 50, 50, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+}
+
+
+/* PLAYER STYLES */
+
+.player {
+    flex: 50%;
+    padding: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.name {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+}
+
+.score {
+    font-size: 8rem;
+    font-weight: 300;
+    color: #e63946;
+    margin-bottom: auto;
+    transition: color 0.3s ease;
+}
+
+.player--active {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.7);
+}
+
+.player--active .name {
+    font-weight: 700;
+    color: #e63946;
+}
+
+.player--active .score {
+    font-weight: 400;
+    color: #e63946;
+}
+
+.player--winner {
+    background-color: #333;
+}
+
+.player--winner .name {
+    font-weight: 700;
+    color: #e63946;
+}
+
+.current {
+    background-color: #e63946;
+    border-radius: 9px;
+    color: #fff;
+    width: 65%;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    transition: all 0.5s ease;
+}
+
+.current-label {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: #ddd;
+}
+
+.current-score {
+    font-size: 3.5rem;
+}
+
+
+/* BUTTON STYLES */
+
+.btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    border: 2px solid #e63946;
+    font-family: inherit;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    color: #e63946;
+    padding: 0.7rem 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #e63946;
+    color: #fff;
+}
+
+.btn--new {
+    top: 4rem;
+}
+
+.btn--roll {
+    top: 39.3rem;
+}
+
+.btn--hold {
+    top: 46.1rem;
+}
+
+.btn:active {
+    transform: translate(-50%, 3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 16.5rem;
+    transform: translateX(-50%);
+    height: 10rem;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+
+/* ANIMATION */
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+        left: 45%;
+    }
+    100% {
+        transform: rotate(360deg);
+        left: 45%;
+    }
+}
+
+.animate {
+    animation: rotation 0.2s ease-out;
+}
+
+.hidden {
+    display: none;
+}
